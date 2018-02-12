@@ -1,0 +1,55 @@
+/* L'utilsateur entre deux dates et le programme lui inique toutes les années bissextilles comprises entre
+ * ces deux dates ainsi que les dates entrées par l'utilisateur.
+ */
+import java.util.Scanner;
+public class Années_bissextilles {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner keyboard = new Scanner (System.in);
+		int année1, année2, année, rest_4, rest_100, rest_400;
+System.out.println("Boujour je suis un générateur d'années bissextilles.");
+System.out.println("Veuillez m'indiquer la première année s'il vous plaît.");
+	année1 =  keyboard.nextInt();
+System.out.println("Bien maintenant, veuillez m'indiquez la seconde date.");
+	année2 = keyboard.nextInt();
+System.out.println("Procédons maintenant au calcul !");
+
+/* C'est la partie du calcul
+ * d'abord on affecte des valeurs aux variables de conditions, les conditions pour qu'une année soit bissextile
+ * ont été trouvées sur wikipédia*/
+ 
+/* on créé une boucle qui va de la première année à la seconde, et en dessous ce sont des instructions, ou bloc de
+ * vérifications
+ * La création des variables rest_ est en-dessous de l'affectation de la variable année, sinon l'ordinateur
+ * ne comprends pas*/
+
+			année = année1;
+			while (année != année2) {
+		
+			
+				rest_4 = année % 4;
+				rest_100 = année % 100;
+				rest_400 = année % 400;
+					
+				if (rest_4 == 0 && rest_100 != 0 || rest_400 == 0)
+					{
+						System.out.print (année);
+						System.out.println( " est une année bissextiles");
+						
+					}
+					année += 1;
+			}
+				
+			
+System.out.println("Fin du programme");
+keyboard.close();
+	}
+
+
+}
+
+
+
+
+
