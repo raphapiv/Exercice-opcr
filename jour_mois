@@ -1,0 +1,48 @@
+import java.util.Scanner;
+import static java.lang.System.out;
+public class Joursdanschaquemois {
+	public static void main (String args[]) {
+	Scanner clavier = new Scanner (System.in);
+int mounth, numberofdays = 0;
+boolean isleapyear;
+
+	out.println("Quel mois ?");
+	mounth = clavier.nextInt();
+	
+	switch (mounth) {
+	
+	case 1:
+	case 3:
+	case 5:
+	case 7:
+	case 8:
+	case 10:
+	case 12:
+		numberofdays = 31;
+				break;
+	/* Le programme s'arrête au break, à utiliser en fonction des  cas, ça serait différent si j'utilisé un jeu de dé*/
+	case 4:
+	case 6:
+	case 9:
+	case 11:
+		numberofdays = 30;
+				break;
+	
+	case 2 :
+		out.print("Année bissextiles (true/false)?");
+		isleapyear = clavier.nextBoolean();
+			if (isleapyear) {
+			numberofdays = 29;
+			}
+			else {
+				numberofdays = 28;
+			}
+	}
+		
+	out.print(numberofdays);
+	out.println(" Jours dans le mois");
+	
+clavier.close();
+	}
+}
+
